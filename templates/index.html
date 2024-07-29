@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Modern Responsive Grid with Dark Theme</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: #121212;
+            color: #ffffff;
+        }
+        h1, h2 {
+            font-weight: 700;
+            color: #ff6f61;
+        }
+        p.description {
+            font-size: 1.2em;
+            color: #b3b3b3;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .person-card {
+            border-radius: 10px;
+            background: #1e1e1e;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .person-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+        .person-card img {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Home page header -->
+        <div class="row">
+            <div class="col-12 text-center my-4">
+                <h1 class="animate__animated animate__fadeInDown">Welcome to le site des comitards MDS 2024-2025</h1>
+                <p class="description animate__animated animate__fadeInUp">Scan le polo d'un comitard pour voir son Profile</p>
+            </div>
+        </div>
+        
+        <!-- List of people -->
+        <div class="row">
+            {% if people %}
+            {% for person_id, person in people.items() %}
+            <div class="col-12 col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
+                <a href="{{ url_for('person_page', person_id=person_id) }}" class="text-decoration-none">
+                    <div class="person-card text-center">
+                        <img src="{{ person.pictures[0] }}" class="img-fluid mb-3" alt="{{ person.name }}">
+                        <h2>{{ person.name }}</h2>
+                        <p class="description">{{ person.description }}</p>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-12 text-center">
+                <p class="description">Les comitard seront listé ici plus tard. Peut etre, si on est gentil.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
