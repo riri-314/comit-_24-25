@@ -1,28 +1,9 @@
 from flask import Flask, render_template
+from people import people
 
 app = Flask(__name__)
 
 visibility = False  # Set to True to enable the people pages to be listed on the home page. False by default
-
-# Comitards data, hard-coded baby
-people = {
-    '123abc': {
-        'name': 'Camart',
-        'description': "J'aime la chope et la guindaille. Yahouuuu",
-        'age': 3.14,
-        'post': 'Sys admin',
-        'height': "3 futs",
-        'pictures': [
-            'static/1.jpg',
-            'static/2.jpg',
-            'static/3.jpg',
-            'static/4.jpg',
-            'static/3.jpg',
-            'static/2.jpg',
-            'static/1.jpg',
-        ]
-    },
-}
 
 @app.route('/')
 def index():
