@@ -3,7 +3,7 @@ from people import people
 
 app = Flask(__name__)
 
-visibility = False  # Set to True to enable the people pages to be listed on the home page. False by default
+visibility = True  # Set to True to enable the people pages to be listed on the home page. False by default
 
 @app.route('/')
 def index():

@@ -1,49 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      !(function (t, e) {
+        var o, n, p, r;
+        e.__SV ||
+          ((window.posthog = e),
+          (e._i = []),
+          (e.init = function (i, s, a) {
+            function g(t, e) {
+              var o = e.split(".");
+              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                (t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                });
+            }
+            ((p = t.createElement("script")).type = "text/javascript"),
+              (p.async = !0),
+              (p.src =
+                s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
+                "/static/array.js"),
+              (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+                p,
+                r
+              );
+            var u = e;
+            for (
+              void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                u.people = u.people || [],
+                u.toString = function (t) {
+                  var e = "posthog";
+                  return (
+                    "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+                  );
+                },
+                u.people.toString = function () {
+                  return u.toString(1) + ".people (stub)";
+                },
+                o =
+                  "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId setPersonProperties".split(
+                    " "
+                  ),
+                n = 0;
+              n < o.length;
+              n++
+            )
+              g(u, o[n]);
+            e._i.push([i, s, a]);
+          }),
+          (e.__SV = 1));
+      })(document, window.posthog || []);
+      posthog.init("phc_nrH8OLQuFyEHw4dJ07EeBQFQoOPFLL7IhXZzmIw4zdi", {
+        api_host: "https://eu.i.posthog.com",
+        person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
+      });
+      console.log("PostHog initialized");
+    </script>
     <title>Perlimpinpin</title>
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <!-- Custom CSS -->
     <style>
-        body {
-            font-family: 'Raleway', sans-serif;
-            background: #121212;
-            color: #ffffff;
-        }
-        h1 {
-            font-weight: 700;
-            color: #ff6f61;
-        }
-        p.description {
-            font-size: 1.2em;
-            color: #b3b3b3;
-        }
-        .container {
-            margin-top: 50px;
-        }
+      body {
+        font-family: "Raleway", sans-serif;
+        background: #121212;
+        color: #ffffff;
+      }
+      h1 {
+        font-weight: 700;
+        color: #ff6f61;
+      }
+      p.description {
+        font-size: 1.2em;
+        color: #b3b3b3;
+      }
+      .container {
+        margin-top: 50px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container text-center">
-        <div class="row">
-            <div class="col-12 my-4">
-                <h1 class="animate__animated animate__fadeInDown">404 - The PaGE eSt NoT fOUnd</h1>
-                <p class="description animate__animated animate__fadeInUp">Pétard cette page n'existe pas</p>
-                <a href="{{ url_for('index') }}" class="btn btn-primary mt-4">Accueil</a>
-            </div>
+      <div class="row">
+        <div class="col-12 my-4">
+          <h1 class="animate__animated animate__fadeInDown">
+            404 - The PaGE eSt NoT fOUnd
+          </h1>
+          <p class="description animate__animated animate__fadeInUp">
+            Pétard cette page n'existe pas
+          </p>
+          <a href="{{ url_for('index') }}" class="btn btn-primary mt-4"
+            >Accueil</a
+          >
         </div>
+      </div>
     </div>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>
